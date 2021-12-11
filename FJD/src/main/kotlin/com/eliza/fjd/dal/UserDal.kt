@@ -1,9 +1,9 @@
-package com.eliza.wfx.dal
+package com.eliza.fjd.dal
 
-import com.eliza.wfx.model.UserModel
-import com.eliza.wfx.utils.JDBCUtil.DbTools
-import com.eliza.wfx.utils.JDBCUtil.DbTools.Companion.addUpdDel
-import com.eliza.wfx.utils.JDBCUtil.DbTools.Companion.selectSql
+import com.eliza.fjd.model.UserModel
+import com.eliza.fjd.utils.JDBCUtil.DbTools
+import com.eliza.fjd.utils.JDBCUtil.DbTools.Companion.addUpdDel
+import com.eliza.fjd.utils.JDBCUtil.DbTools.Companion.selectSql
 import java.sql.ResultSet
 import java.sql.SQLException
 
@@ -16,7 +16,7 @@ class UserDal {
             val rs: ResultSet? = DbTools.selectSql("select * from w_user where u_name='$name' and u_pwd='$pwd'")
             while (rs?.next() == true) {
                 if (rs.getString("u_name") == name && rs.getString("u_psw") == pwd) {
-                    return UserModel(name, pwd)
+                    return UserModel(name, pwd )
                 }
             }
         } catch (e: SQLException) {
@@ -25,9 +25,7 @@ class UserDal {
         return null
 
     }
-
     @Throws(SQLException::class)
-
     fun register(user: UserModel): Boolean {
         var flag = false
         /**/
@@ -38,7 +36,6 @@ class UserDal {
         }
         return flag
     }
-
     /**
      * Get user all
      *
@@ -76,6 +73,7 @@ class UserDal {
                     }
                 }
             }
+
         }
         println(sql)
         val list: MutableList<UserModel> = ArrayList()
@@ -84,16 +82,17 @@ class UserDal {
             while (rs!!.next()) {
                 list.add(
                     UserModel(
-                        rs.getLong("u_id"),
+                        rs.getInt("u_id"),
                         rs.getString("u_name"),
-                        rs.getString("u_title"),
-                        rs.getString("u_signature"),
-                        rs.getString("u_signatureTxt"),
-                        rs.getString("u_tel"),
-                        rs.getString("u_pwd")
+                        rs.getLong("u_tel"),
+                        rs.getString("u_pwd"),
+                        rs.getString("u_head_img"),
+                        rs.getString("u_balance"),
+                        rs.getString("u_addr")
                     )
                 )
             }
+
             if (list.isEmpty()) {
                 println("--信息不存在--")
                 return null

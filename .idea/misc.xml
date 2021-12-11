@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/Exa" />
+    <file type="web" url="file://$PROJECT_DIR$/FJD" />
     <file type="web" url="file://$PROJECT_DIR$/WFX" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -12,8 +13,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/Exa/pom.xml" />
         <option value="$PROJECT_DIR$/WFX/pom.xml" />
+        <option value="$PROJECT_DIR$/FJD/pom.xml" />
       </list>
     </option>
   </component>

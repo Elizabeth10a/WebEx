@@ -3,12 +3,12 @@ package com.eliza.wfx.model;
 public class UserModel {
 
     private long id;
-    private String name;
-    private String title;
-    private String signature;
-    private String signatureTxt;
-    private String tel;
-    private String pwd;
+    private String name="";
+    private String title="";
+    private String signature="";
+    private String signatureTxt="";
+    private String tel="";
+    private String pwd="";
 
 
     public UserModel() {

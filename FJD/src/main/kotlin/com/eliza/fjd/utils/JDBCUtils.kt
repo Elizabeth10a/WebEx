@@ -1,4 +1,4 @@
-package com.eliza.wfx.utils
+package com.eliza.fjd.utils
 
 import com.alibaba.druid.pool.DruidDataSource
 import com.alibaba.druid.pool.DruidDataSourceFactory
@@ -12,7 +12,6 @@ class JDBCUtils {
         val properties = Properties()
         properties.load(JDBCUtils::class.java.getResourceAsStream("/db/sql.properties")) //加载了配置文件中所有的属性
         ds = (DruidDataSourceFactory.createDataSource(properties) as DruidDataSource?)
-
         ds ?: let {
             println("链接池创建出错!")
             return@let

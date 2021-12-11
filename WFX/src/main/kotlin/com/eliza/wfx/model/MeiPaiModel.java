@@ -5,23 +5,21 @@ public class MeiPaiModel {
 
     //basic information
     private long id;
-    private String shortTitle;
-    private String content;
-    private String coverPic;
-    private String contentPic;
+    private String shortTitle="";
+    private String content="";
+    private String coverPic="";
+    private String contentPic="";
 
     //收藏数
-    private int nCollect;
+    private int nCollect=0;
     //点赞数
-    private int nFavorite;
+    private int nFavorite=0;
 
     private long ownerId;
     private UserModel owner;
     private boolean isTop = false;
     private short isDeleted = 0;
     private int nOrder = 0;
-
-
     public MeiPaiModel(String shortTitle, long ownerId) {
         this.shortTitle = shortTitle;
         this.ownerId = ownerId;
